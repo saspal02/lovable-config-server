@@ -1,0 +1,38 @@
+# account-service.yml - served by config-server to account-service.
+# Ported from tutorial, adapted: local datasource matches this project's
+# docker-compose (lovableDB/testuser/9010); secrets are ${ENV} placeholders.
+
+server:
+  port: 9050
+  servlet.context-path: /account
+
+spring:
+  datasource:
+    url: jdbc:postgresql://${PSQL_HOST:localhost}:${PSQL_PORT:9010}/${PSQL_DATABASE:lovableDB}
+    username: ${PSQL_USER:testuser}
+    password: ${PSQL_PASSWORD:changeme-dev-only}
+    driver-class-name: org.postgresql.Driver
+
+stripe:
+  api:
+    secret: ${STRIPE_SECRET:changeme-dev-only}
+  webhook:
+    secret: ${STRIPE_WEBHOOK_SECRET:changeme-dev-only}
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: k8s
+  datasource:
+    url: jdbc:postgresql://pgvector.lovable-core.svc.cluster.local:5432/account_db
+    username: account_user
+    password: ${DB_PASSWORD}
+
+
+stripe:
+  api:
+    secret: ${STRIPE_API_KEY}
+  webhook:
+    secret: ${STRIPE_WEBHOOK_SECRET}

@@ -1,0 +1,45 @@
+# intelligence-service.yml - served by config-server to intelligence-service.
+# Ported from tutorial, adapted: local datasource matches this project's
+# docker-compose; AI key is an ${ENV} placeholder (never commit the real key).
+
+server:
+  port: 9030
+  servlet.context-path: /intelligence
+
+spring:
+  datasource:
+    url: jdbc:postgresql://${PSQL_HOST:localhost}:${PSQL_PORT:9010}/${PSQL_DATABASE:lovableDB}
+    username: ${PSQL_USER:testuser}
+    password: ${PSQL_PASSWORD:changeme-dev-only}
+    driver-class-name: org.postgresql.Driver
+
+  ai:
+    model.chat: openai
+    openai:
+      api-key: ${AI_API_KEY:changeme-dev-only}
+      base-url: https://openrouter.ai/api
+      chat:
+        options:
+          model: google/gemini-3-flash-preview
+          temperature: 0.2
+      embedding:
+        options:
+          model: qwen/qwen3-embedding-8b
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: k8s
+  datasource:
+    url: jdbc:postgresql://pgvector.lovable-core.svc.cluster.local:5432/intelligence_db
+    username: intelligence_user
+    password: ${DB_PASSWORD}
+
+ai:
+    openai:
+      api-key: ${AI_API_KEY}
+    chat:
+        options:
+          model: google/gemini-3-flash-preview
