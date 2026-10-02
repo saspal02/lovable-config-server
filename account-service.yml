@@ -11,7 +11,7 @@ spring:
 
 stripe:
   api:
-    secret: ${STRIPE_SECRET}
+    secret: ${STRIPE_API_KEY}
   webhook:
     secret: ${STRIPE_WEBHOOK_SECRET}
 
