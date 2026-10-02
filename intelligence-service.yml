@@ -4,7 +4,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:9010/lovable-intelligence-db
+    url: jdbc:postgresql://localhost:9010/intelligence_db
     username: ${PSQL_USER}
     password: ${PSQL_PASSWORD}
     driver-class-name: org.postgresql.Driver
@@ -32,10 +32,12 @@ spring:
     url: jdbc:postgresql://pgvector.lovable-core.svc.cluster.local:5432/intelligence_db
     username: intelligence_user
     password: ${DB_PASSWORD}
-
-ai:
+  ai:
+    model.chat: openai
     openai:
       api-key: ${AI_API_KEY}
-    chat:
+      base-url: https://openrouter.ai/api
+      chat:
         options:
           model: google/gemini-3-flash-preview
+          temperature: 0.2

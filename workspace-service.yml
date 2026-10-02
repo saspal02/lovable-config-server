@@ -4,7 +4,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:9010/lovable-workspace-db
+    url: jdbc:postgresql://localhost:9010/workspace_db
     username: ${PSQL_USER}
     password: ${PSQL_PASSWORD}
     driver-class-name: org.postgresql.Driver
