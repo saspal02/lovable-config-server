@@ -1,8 +1,0 @@
-# This repo is PUBLIC - never commit real credentials.
-# All secrets must stay ${ENV_VAR} placeholders / dev-only defaults in the *.yml files.
-.env
-*.env
-secrets.yaml
-secrets.*.yaml
-*.pem
-*.key
