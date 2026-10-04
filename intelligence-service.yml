@@ -13,7 +13,7 @@ spring:
     model.chat: openai
     openai:
       api-key: ${AI_API_KEY}
-      base-url: https://openrouter.ai/api
+      base-url: https://openrouter.ai/api/v1
       chat:
         options:
           model: google/gemini-3-flash-preview
@@ -36,7 +36,7 @@ spring:
     model.chat: openai
     openai:
       api-key: ${AI_API_KEY}
-      base-url: https://openrouter.ai/api
+      base-url: https://openrouter.ai/api/v1
       chat:
         options:
           model: google/gemini-3-flash-preview
