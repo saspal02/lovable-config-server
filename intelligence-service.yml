@@ -13,10 +13,10 @@ spring:
     model.chat: openai
     openai:
       api-key: ${AI_API_KEY}
-      base-url: https://openrouter.ai/api/v1
+      base-url: https://api.groq.com/openai/v1
       chat:
         options:
-          model: nvidia/nemotron-3-ultra-550b-a55b:free
+          model: llama-3.3-70b-versatile
           temperature: 0.2
           max-tokens: 4000
       embedding:
@@ -35,11 +35,11 @@ spring:
     password: ${DB_PASSWORD}
   ai:
     model.chat: openai
-    openai:
-      api-key: ${AI_API_KEY}
-      base-url: https://openrouter.ai/api/v1
-  chat:
-    options:
-      model: nvidia/nemotron-3-ultra-550b-a55b:free
-      temperature: 0.2
-      max-tokens: 4000
+  openai:
+    api-key: ${AI_API_KEY}
+    base-url: https://api.groq.com/openai/v1
+    chat:
+      options:
+        model: llama-3.3-70b-versatile
+        temperature: 0.2
+        max-tokens: 4000
