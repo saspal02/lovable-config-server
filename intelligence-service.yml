@@ -16,10 +16,11 @@ spring:
       base-url: https://openrouter.ai/api/v1
       chat:
         options:
-          # Free-tier codegen (verified Sept 2026). Fallback if rate-limited/dead:
-          #   poolside/laguna-s-2.1:free  (262K, coding-agent specialist)
-          #   cohere/north-mini-code:free (256K, agentic coding model)
-          model: deepseek/deepseek-v4-flash-0731:free
+          # Free-tier codegen, live-verified 2026-10-10 (direct API probe: 200 OK).
+          # deepseek-v4-flash-0731:free is DEAD (404, use paid slug only) and
+          # laguna-s-2.1:free 429s on the shared pool. Fallback:
+          #   nvidia/nemotron-3-ultra-550b-a55b:free (1M ctx, verified 200 OK)
+          model: cohere/north-mini-code:free
           temperature: 0.2
           max-tokens: 8000
       embedding:
@@ -43,9 +44,10 @@ spring:
       base-url: https://openrouter.ai/api/v1
       chat:
         options:
-          # Free-tier codegen (verified Sept 2026). Fallback if rate-limited/dead:
-          #   poolside/laguna-s-2.1:free  (262K, coding-agent specialist)
-          #   cohere/north-mini-code:free (256K, agentic coding model)
-          model: deepseek/deepseek-v4-flash-0731:free
+          # Free-tier codegen, live-verified 2026-10-10 (direct API probe: 200 OK).
+          # deepseek-v4-flash-0731:free is DEAD (404, use paid slug only) and
+          # laguna-s-2.1:free 429s on the shared pool. Fallback:
+          #   nvidia/nemotron-3-ultra-550b-a55b:free (1M ctx, verified 200 OK)
+          model: cohere/north-mini-code:free
           temperature: 0.2
           max-tokens: 8000
