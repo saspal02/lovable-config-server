@@ -16,7 +16,7 @@ spring:
       base-url: https://openrouter.ai/api/v1
       chat:
         options:
-          model: google/gemini-3-flash-preview
+          model: nvidia/nemotron-3-ultra-550b-a55b:free
           temperature: 0.2
           max-tokens: 4000
       embedding:
@@ -38,8 +38,8 @@ spring:
     openai:
       api-key: ${AI_API_KEY}
       base-url: https://openrouter.ai/api/v1
-      chat:
-        options:
-          model: google/gemini-3-flash-preview
-          temperature: 0.2
-          max-tokens: 4000
+  chat:
+    options:
+      model: nvidia/nemotron-3-ultra-550b-a55b:free
+      temperature: 0.2
+      max-tokens: 4000
