@@ -16,11 +16,6 @@ spring:
       base-url: https://openrouter.ai/api/v1
       chat:
         options:
-          # Free-tier codegen, live-verified 2026-10-10 (direct API probes).
-          # DEAD/THROTTLED: deepseek-v4-flash-0731:free (404, paid slug only),
-          # gemma-4-26b-a4b-it:free (429 shared pool), laguna-s-2.1:free (429),
-          # north-mini-code:free (200 but loops read_files x40, writes nothing).
-          # Fallback: poolside/laguna-s-2.1:free once its 429 clears.
           model: nvidia/nemotron-3-ultra-550b-a55b:free
           temperature: 0.2
           max-tokens: 8000
@@ -45,11 +40,6 @@ spring:
       base-url: https://openrouter.ai/api/v1
       chat:
         options:
-          # Free-tier codegen, live-verified 2026-10-10 (direct API probes).
-          # DEAD/THROTTLED: deepseek-v4-flash-0731:free (404, paid slug only),
-          # gemma-4-26b-a4b-it:free (429 shared pool), laguna-s-2.1:free (429),
-          # north-mini-code:free (200 but loops read_files x40, writes nothing).
-          # Fallback: poolside/laguna-s-2.1:free once its 429 clears.
           model: nvidia/nemotron-3-ultra-550b-a55b:free
           temperature: 0.2
           max-tokens: 8000
