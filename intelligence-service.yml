@@ -16,7 +16,10 @@ spring:
       base-url: https://openrouter.ai/api/v1
       chat:
         options:
-          model: google/gemini-3-flash-preview
+          # Free-tier codegen (verified Sept 2026). Fallback if rate-limited/dead:
+          #   poolside/laguna-s-2.1:free  (262K, coding-agent specialist)
+          #   cohere/north-mini-code:free (256K, agentic coding model)
+          model: deepseek/deepseek-v4-flash-0731:free
           temperature: 0.2
           max-tokens: 8000
       embedding:
@@ -40,6 +43,9 @@ spring:
       base-url: https://openrouter.ai/api/v1
       chat:
         options:
-          model: google/gemini-3-flash-preview
+          # Free-tier codegen (verified Sept 2026). Fallback if rate-limited/dead:
+          #   poolside/laguna-s-2.1:free  (262K, coding-agent specialist)
+          #   cohere/north-mini-code:free (256K, agentic coding model)
+          model: deepseek/deepseek-v4-flash-0731:free
           temperature: 0.2
           max-tokens: 8000
