@@ -16,7 +16,7 @@ spring:
       base-url: https://openrouter.ai/api/v1
       chat:
         options:
-          model: thinkingmachines/inkling-small:free
+          model: google/gemini-3-flash-preview
           temperature: 0.2
           max-tokens: 16000
 
@@ -37,6 +37,6 @@ spring:
       base-url: https://openrouter.ai/api/v1
       chat:
         options:
-          model: thinkingmachines/inkling-small:free
+          model: google/gemini-3-flash-preview
           temperature: 0.2
           max-tokens: 16000
