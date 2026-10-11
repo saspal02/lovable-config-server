@@ -16,12 +16,9 @@ spring:
       base-url: https://openrouter.ai/api/v1
       chat:
         options:
-          model: google/gemma-4-31b-it:free
+          model: thinkingmachines/inkling-small:free
           temperature: 0.2
-          max-tokens: 4000
-      embedding:
-        options:
-          model: qwen/qwen3-embedding-8b
+          max-tokens: 16000
 
 ---
 
@@ -40,6 +37,6 @@ spring:
       base-url: https://openrouter.ai/api/v1
       chat:
         options:
-          model: google/gemma-4-31b-it:free
+          model: thinkingmachines/inkling-small:free
           temperature: 0.2
-          max-tokens: 4000
+          max-tokens: 16000
