@@ -16,7 +16,7 @@ spring:
       base-url: https://openrouter.ai/api/v1
       chat:
         options:
-          model: cohere/north-mini-code:free
+          model: stepfun/step-3.5-flash:free
           temperature: 0.2
           max-tokens: 16000
 
@@ -37,6 +37,6 @@ spring:
       base-url: https://openrouter.ai/api/v1
       chat:
         options:
-          model: cohere/north-mini-code:free
+          model: stepfun/step-3.5-flash:free
           temperature: 0.2
           max-tokens: 16000
