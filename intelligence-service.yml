@@ -2,11 +2,6 @@ server:
   port: 9030
   servlet.context-path: /intelligence
 
-logging:
-  level:
-    org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor: DEBUG
-    org.springframework.ai.chat.model: DEBUG
-
 spring:
   datasource:
     url: jdbc:postgresql://localhost:9010/intelligence_db
