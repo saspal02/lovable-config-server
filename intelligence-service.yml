@@ -13,10 +13,10 @@ spring:
     model.chat: openai
     openai:
       api-key: ${AI_API_KEY}
-      base-url: https://openrouter.ai/api/v1
+      base-url: https://generativelanguage.googleapis.com/v1beta/openai
       chat:
         options:
-          model: google/gemini-3-flash-preview
+          model: gemini-3.8-flash
           temperature: 0.2
           max-tokens: 3500
 
@@ -34,9 +34,9 @@ spring:
     model.chat: openai
     openai:
       api-key: ${AI_API_KEY}
-      base-url: https://openrouter.ai/api/v1
+      base-url: https://generativelanguage.googleapis.com/v1beta/openai
       chat:
         options:
-          model: google/gemini-3-flash-preview
+          model: gemini-3.8-flash
           temperature: 0.2
           max-tokens: 3500
