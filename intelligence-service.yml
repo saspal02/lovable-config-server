@@ -11,9 +11,13 @@ spring:
 
   ai:
     model.chat: openai
+    retry:
+      max-attempts: 1
+      on-client-errors: false
     openai:
       api-key: ${AI_API_KEY}
       base-url: https://generativelanguage.googleapis.com/v1beta/openai
+      max-retries: 0
       chat:
         options:
           model: gemini-3.1-flash-lite
@@ -32,9 +36,13 @@ spring:
     password: ${DB_PASSWORD}
   ai:
     model.chat: openai
+    retry:
+      max-attempts: 1
+      on-client-errors: false
     openai:
       api-key: ${AI_API_KEY}
       base-url: https://generativelanguage.googleapis.com/v1beta/openai
+      max-retries: 0
       chat:
         options:
           model: gemini-3.1-flash-lite
